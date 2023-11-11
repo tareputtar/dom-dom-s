@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="main_menu_card_id"
+        name="Tap Card"
+        groups="card_group_id"
+        web_icon="hspl_tapcard_base,static/description/icon.png"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_res_partner_report_id"
+        name="Reports"
+        parent="main_menu_card_id"
+        sequence="90"
+    />
+
+    <menuitem
+        id="menu_res_partner_configuration"
+        name="Configuration"
+        parent="main_menu_card_id"
+        sequence="100"
+    />
+</odoo>

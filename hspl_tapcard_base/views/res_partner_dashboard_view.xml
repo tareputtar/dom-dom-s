@@ -1,0 +1,109 @@
+<odoo>
+    <!-- ================================= Card  Dashboard ================================= -->
+    <record model="ir.ui.view" id="card_graph_view_id">
+        <field name="name">res.partner.card.graph.view</field>
+        <field name="model">res.partner.card</field>
+        <field name="arch" type="xml">
+            <form string="card Graph" type="pie">
+                <field name="name" />
+                <field name="card_no" />
+            </form>
+        </field>
+    </record>
+
+    <record id="act_dashboard_card_view" model="ir.actions.act_window">
+        <field name="name">Cards</field>
+        <field name="res_model">res.partner.card</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="card_graph_view_id" />
+    </record>
+
+    <!-- ================================= Album  Dashboard ================================= -->
+
+    <record model="ir.ui.view" id="album_graph_view_id">
+        <field name="name">res.partner.album.graph.view</field>
+        <field name="model">res.partner.album</field>
+        <field name="arch" type="xml">
+            <form string="Album Graph" type="pie">
+                <field name="name" />
+                <field name="partner_id" />
+                <field name="contact_ids" widget="many2many_tags" />
+            </form>
+        </field>
+    </record>
+
+    <record id="act_dashboard_album_view" model="ir.actions.act_window">
+        <field name="name">Album</field>
+        <field name="res_model">res.partner.album</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="album_graph_view_id" />
+    </record>
+
+    <!-- ================================= Contact  Dashboard ================================= -->
+
+    <record model="ir.ui.view" id="contact_graph_view_id">
+        <field name="name">res.partner.contact.graph.view</field>
+        <field name="model">res.partner.contact</field>
+        <field name="arch" type="xml">
+            <form string="Contacts Graph" type="pie">
+                <field name="name" />
+            </form>
+        </field>
+    </record>
+
+    <record id="act_dashboard_contact_view" model="ir.actions.act_window">
+        <field name="name">Contacts</field>
+        <field name="res_model">res.partner.contact</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="hspl_tapcard_base.contact_graph_view_id" />
+    </record>
+
+    <!-- ================================= Dashboard ================================= -->
+
+    <record model="ir.ui.view" id="dashboard_form_view_id">
+        <field name="name">board.board.form.view</field>
+        <field name="model">board.board</field>
+        <field name="arch" type="xml">
+            <form string="Dashboard">
+                <board style="1-2">
+                    <column>
+                        <action
+                            string="Contacts"
+                            name="%(hspl_tapcard_base.act_dashboard_contact_view)d"
+                        />
+                        <action
+                            string="Cards"
+                            name="%(hspl_tapcard_base.act_dashboard_card_view)d"
+                        />
+                    </column>
+                    <column>
+                        <action
+                            string="Albums"
+                            name="%(hspl_tapcard_base.act_dashboard_album_view)d"
+                        />
+                    </column>
+                </board>
+            </form>
+        </field>
+    </record>
+
+    <!-- ================================= Action  Dashboard ================================= -->
+
+    <record id="action_dashboard_view" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">form</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="dashboard_form_view_id" />
+    </record>
+
+    <!-- ================================= Menu Dashboard ================================= -->
+
+    <menuitem
+        id="menu_dashboard_id"
+        name="Dashboard"
+        parent="hspl_tapcard_base.main_menu_card_id"
+        action="action_dashboard_view"
+        sequence="0"
+    />
+</odoo>

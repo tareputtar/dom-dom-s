@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_partner_contact,res.partner.contact,model_res_partner_contact,,1,1,1,1
+access_res_partner_album,res.partner.album,model_res_partner_album,,1,1,1,1
+access_res_partner_card,res.partner.card,model_res_partner_card,,1,1,1,1
+access_res_partner_profile_view,res.partner.profile.view,model_res_partner_profile_view,,1,1,1,1
+access_res_partner_social,res.partner.social,model_res_partner_social,,1,1,1,1
+access_res_partner_social_channel,res.partner.social.channel,model_res_partner_social_channel,,1,1,1,1
+access_res_partner_contact_export,access_res_partner_contact_export,model_res_partner_contact_export,,1,1,1,1
+access_product_template_portal,access_product_template_portal,product.model_product_template,,1,0,0,0
+access_product_portal,access_product_portal,product.model_product_product,,1,0,0,0

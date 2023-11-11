@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_res_partner_social_tree" model="ir.ui.view">
+        <field name="name">res.partner.social.tree</field>
+        <field name="model">res.partner.social.channel</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_res_partner_social_link" model="ir.actions.act_window">
+        <field name="name">Social Media</field>
+        <field name="res_model">res.partner.social.channel</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_res_partner_social_tree" />
+    </record>
+
+    <menuitem
+        id="menu_res_partner_social"
+        name="Social Channel"
+        parent="menu_res_partner_configuration"
+        action="action_res_partner_social_link"
+        sequence="100"
+    />
+</odoo>

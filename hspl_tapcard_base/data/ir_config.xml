@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="flutter_web_base_url" model="ir.config_parameter">
+        <field name="key">flutter.web.base.url</field>
+        <field name="value">https://tapcard-b5c07.web.app</field>
+    </record>
+</odoo>
